@@ -54,7 +54,7 @@
   </head>
   <body>
     <div class="home">
-      <video class="background-video" muted autoplay>
+      <video plays-inline class="background-video" muted autoplay>
         <source class="source" src="img/anime001.mp4" type="video/mp4" />
       </video>
     </div>
@@ -93,7 +93,9 @@
           video.play();
         }
       };
-
+      video.onerror = function () {
+        console.error("Video yüklenirken hata oluştu.");
+      };
       window.onresize = checkWindowWidth;
       window.onload = checkWindowWidth;
     </script>
